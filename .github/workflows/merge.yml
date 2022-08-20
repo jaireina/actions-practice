@@ -14,8 +14,8 @@ jobs:
     steps:
       - run: echo "This PR was approved"
       - run: echo "GITHUB_ACTOR ${{ github.actor }}"
-      - run: echo "GITHUB_HEAD_REF ${{ GITHUB_HEAD_REF }}"
-      - run: echo "GITHUB_REF ${{GITHUB_REF}}"
+      - run: echo "GITHUB_HEAD_REF ${{ github.head_ref }}"
+      - run: echo "GITHUB_REF ${{github.ref}}"
       
 #       - uses: actions/checkout@v1
 #       - uses: maxkomarychev/merge-pal-action@v0.5.1
