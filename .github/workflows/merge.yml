@@ -3,7 +3,8 @@ name: Merge - Deploy - Delete
 on:
   pull_request_review:
     types: [submitted]
-    branches: [main]
+    branches: 
+      - 'main'
 
 jobs:
   mergepal-merge: 
