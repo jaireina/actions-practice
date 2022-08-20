@@ -1,0 +1,5 @@
+name: Merge - Deploy - Delete
+
+on:
+  pull_request:
+    types: []
