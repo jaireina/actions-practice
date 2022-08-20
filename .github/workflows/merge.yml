@@ -1,5 +1,18 @@
 name: Merge - Deploy - Delete
 
 on:
-  pull_request:
-    types: []
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  mergepal-merge: 
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This PR was approved"
+      
+      - uses: actions/checkout@v1
+      - uses: maxkomarychev/merge-pal-action@v0.5.1
+        with:
+          token: ${{ secrets.GIT_TOKEN }}
+      - run: echo "This PR MERGED"
