@@ -3,13 +3,10 @@ name: Merge - Deploy - Delete
 on:
   pull_request_review:
     types: [submitted]
-    branches: 
-      - 'main'
 
 jobs:
   mergepal-merge: 
-
-    if: github.event.review.state == 'approved'
+    if: github.event.review.state == 'approved' && github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
     steps:
       - run: echo "This PR was approved"
