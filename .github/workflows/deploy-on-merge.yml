@@ -1,6 +1,10 @@
 name: deploy on merge
 on:
   pull_request:
+    types:
+      - closed
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -10,6 +14,6 @@ jobs:
       - run: echo "This PR was approved by ${{ github.actor }}"
       - uses: actions/checkout@v1
       - run: echo "PR status ${{github.event.pull_request.merged}}"
-      - run: echo "git status"    
-      - run: echo "git checkout main"
-      - run: echo "git pull origin main"
+      - run: git status
+      - run: git checkout main
+      - run: git pull origin main
