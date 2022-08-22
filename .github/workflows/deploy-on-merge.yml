@@ -1,7 +1,6 @@
 name: deploy on merge
 on:
-  pull_request: 
-    types: [close]
+  pull_request:
 
 jobs:
   deploy:
