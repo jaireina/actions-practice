@@ -1,0 +1,11 @@
+name: Test custom action
+on: push
+jobs:
+  main:
+    runs-on: unbuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: jaireina/moo-action@main
+        with:
+          args: 'THIS IS FANTASTIC!'
+   
